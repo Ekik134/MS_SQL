@@ -1,10 +1,14 @@
 == ПЕРВАЯ ПАРА ==
 
+компьютер -> сервер (экземпляр) -> бд (часть экземпляра) -> таблицы -> данные
+
 типы данных БД
 1. битовые
 2. целочисленные (int)
 3. дробные (real, float, decimal)
-4. символьные (char, varchar)
+4. символьные (char, varchar, nvarchar)
+	varchar - ascii
+	nvarchar - unicode
 5. дата и время (datetime, smalldatetime)
 6. специальные (text, bit - boolean, image)
 7. денежные (money)
@@ -30,9 +34,21 @@ tempdf - временная бд
 
 
 sql server 2025 + ms SQL server managment studio
-создаём сервер -> подключаемся
+1. создаём сервер в sql server-> подключаемся к нему в ms sql server managment
+2. создаём бд внутри экземпляра сервера (нужны права админа...)
+3. создаём таблицу
+	пример: 
+USE [college] 
+GO
 
+CREATE TABLE [dbo].[Users] ( 
+	[Id] INT IDENTITY(1,1) PRIMARY KEY,
+	[Login] NVARCHAR(50) NOT NULL UNIQUE,
+	[Age] INT NOT NULL
+	);
 
+GO
+4. создаём ряды (через боль)
 
 
 
